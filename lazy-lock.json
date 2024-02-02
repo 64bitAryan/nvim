@@ -1,0 +1,10 @@
+{
+  "harpoon": { "branch": "master", "commit": "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
+  "lazy.nvim": { "branch": "main", "commit": "28126922c9b54e35a192ac415788f202c3944c9f" },
+  "playground": { "branch": "master", "commit": "ba48c6a62a280eefb7c85725b0915e021a1a0749" },
+  "plenary.nvim": { "branch": "master", "commit": "4f71c0c4a196ceb656c824a70792f3df3ce6bb6d" },
+  "rose-pine": { "branch": "main", "commit": "9d7474f80afe2f0cfcb4fabfc5451f509d844b85" },
+  "telescope.nvim": { "branch": "master", "commit": "e54fbf4ab2b64640b639b75c006c23b4bc51c86f" },
+  "undotree": { "branch": "master", "commit": "a1758ba9990b7189f601a3a5acdfc8ca3907a700" },
+  "vim-fugitive": { "branch": "master", "commit": "f116dcc8e21021e6fbfb6b0a9f8f7b9566d933f4" }
+}
