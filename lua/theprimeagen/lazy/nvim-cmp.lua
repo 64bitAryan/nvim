@@ -8,8 +8,10 @@ return {
         'hrsh7th/cmp-cmdline',
         'L3MON4D3/LuaSnip',
         "saadparwaiz1/cmp_luasnip",
+        "j-hui/fidget.nvim",
     },
     config = function()
+        require("fidget").setup()
         local cmp = require("cmp")
         local luasnip = require("luasnip")
         local cmp_select = {behavior = cmp.SelectBehavior.Select}
