@@ -21,7 +21,7 @@ vim.filetype.add({
 autocmd('TextYankPost', {
     group = yank_group,
     pattern = '*',
-    callback = function() 
+    callback = function()
         vim.highlight.on_yank({
             higroup = "IncSearch",
             timeout = 40
@@ -37,7 +37,7 @@ autocmd({"BufWritePre"},{
 
 autocmd('LspAttach', {
     group = ThePrimeagenGroup,
-    callback = function(e) 
+    callback = function(e)
         local opts = { buffer = e.buf }
     end
 })
@@ -47,3 +47,19 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 
+local client = vim.lsp.start_client {
+    name = "educationalsp",
+    cmd = { "/home/md/personal/LSP/main.go" },
+}
+
+if not client then
+    vim.notify "hey, you did't do the client thing well"
+    return
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.lsp.buf_attach_client(0, client)
+    end
+})

@@ -13,6 +13,7 @@ return {
     config = function()
         -- import lspconfig plugin
         local lspconfig = require("lspconfig")
+        local util = require("lspconfig/util")
 
         -- import cmp-nvim-lsp plugin
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -118,15 +119,11 @@ return {
 
         -- gopllocal lspconfig = require("lspconfig")
         lspconfig.gopls.setup({
-            settings = {
-                gopls = {
-                    analyses = {
-                        unusedparams = true,
-                    },
-                    staticcheck = true,
-                    gofumpt = true,
-                },
-            },
+            on_attach = on_attach,
+            capabilities = capabilities,
+            cmd = {"gopls"},
+            filetypes = {"go", "gomod", "gowork", "gotempl"},
+            root_dir = util.root_pattern("go.work", "go.mod", ".git")
         })
 
         -- configure tailwindcss server
